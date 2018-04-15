@@ -60,11 +60,15 @@ a:active  {color: hotpink;}	/* selected link */
 a:visited {color: green;}	/* visited link */
 
 /*below for hidecol*/
-	.nwrp
-	{
-		white-space:	nowrap
-	}
+	.nwrp{	white-space:	nowrap	}
 	.colcu
+	{
+		vertical-align:	default;/*top*/
+		text-align: 	left;
+		white-space:	nowrap;
+		display:    	none;
+	}
+	.colcut
 	{
 		vertical-align:	default;/*top*/
 		text-align: 	left;
@@ -78,7 +82,21 @@ a:visited {color: green;}	/* visited link */
 		white-space:	no;
 		display:    	none;
 	}
+	.colsd2
+	{
+		vertical-align:	default;/*top*/
+		text-align: 	left;
+		white-space:	no;
+		display:    	none;
+	}
 	.colslx
+	{
+		vertical-align:	default;/*top*/
+		text-align: 	left;
+		white-space:	nowrap;
+		display:    	none;
+	}
+	.colsx
 	{
 		vertical-align:	default;/*top*/
 		text-align: 	left;
@@ -97,41 +115,52 @@ a:visited {color: green;}	/* visited link */
 will show column explanations/options.
 Click on column header to sort table.
 
- [<a id="swcu" onclick="textswitcher('swcu','Click to +View+ Charm Upgrades','Click to -Hide- Charm Upgrades');csssw('.colcu','display','none','table-cell')">Click to +View+ Charm Upgrades</a>]
- [<a id="swsd" onclick="textswitcher('swsd','Click to +View+ Skill Descriptions','Click to -Hide- Skill Descriptions');csssw('.colsd','display','none','table-cell')">Click to +View+ Skill Descriptions</a>]
- [<a id="swslx" onclick="textswitcher('swslx','Click to +View+ Skill Level Descriptions','Click to -Hide- Skill Level Descriptions');csssw('.colslx','display','none','table-cell')">Click to +View+ Skill Level Descriptions</a>]
+ [<a id="swcut" onclick="textswitcher('swcut','Click to +-Toggle-+ Charm Upgrades Column','Click to -+Toggle+- Charm Upgrades Column');csssw('.colcut','display','none','table-cell');">Click to +View+ Charm Upgrades</a>]
+ [<a id="swsd" onclick="textswitcher('swsd','Click to +-Toggle-+ Skill Descriptions Column','Click to -+Toggle+- Skill Descriptions Column');csssw('.colsd2','display','none','table-cell');">Click to +View+ Skill Descriptions</a>]
+ [<a id="swslx" onclick="textswitcher('swslx','Click to +-Toggle-+ Skill Level Descriptions Column','Click to -+Toggle+- Skill Level Descriptions Column');csssw('.colslx','display','none','table-cell');">Click to +View+ Skill Level Descriptions</a>]
+<br />
+Too much information? View only:
+  [<u><a id="reloader" href="default.htm">Default Sk/D/Ch</a>]</u>
+  [<u><a id="swall" onclick="csssw('.colcu','display','none','table-cell');csssw('.colsd','display','table-cell','none');csssw('.colsx','display','table-cell','none');">Full***</a></u>]
+, [<u><a id="sws2"   onclick="csssw('.cold','display','none','table-cell');csssw('.colc','display','none','table-cell');csssw('.colsd2','display','none','table-cell');csssw('.colslx','display','none','table-cell');   csssw('.colfl','display','none','table-cell');csssw('.colfh','display','none','table-cell');">Skills</a></u>]
+  [<u><a id="sws"    onclick="csssw('.cold','display','none','table-cell');csssw('.colc','display','none','table-cell'); csssw('.colsd','display','none','table-cell');csssw('.colsx','display','none','table-cell');">Full</a></u>]
+, [<u><a id="swd2"   onclick="                                             csssw('.colc','display','none','table-cell');                                                                                                 csssw('.colfl','display','none','table-cell');csssw('.colfh','display','none','table-cell');csssw('.coloi','display','none','table-cell');csssw('.colom','display','none','table-cell');">Decos</a></u>]
+  [<u><a id="swd"    onclick="                                             csssw('.colc','display','none','table-cell');">Full</a></u>]
+, [<u><a id="swc2"   onclick="csssw('.cold','display','none','table-cell');                                             csssw('.colcut','display','none','table-cell');                                                  csssw('.colfl','display','none','table-cell');csssw('.colfh','display','none','table-cell');csssw('.colar','display','none','table-cell');csssw('.colcm','display','none','table-cell');csssw('.cols2','display','none','table-cell');">Charms</a></u>]
+  [<u><a id="swc"    onclick="csssw('.cold','display','none','table-cell');                                              csssw('.colcu','display','none','table-cell');">Full</a></u>]
+ (use only after page reload, buggy otherwise).
 
 </p>
-<hr><div id="topruler"></div></hr>
+<hr /><div id="topruler"></div>
 
 <table class="sortable">
 	<thead>	
 	<tr>
-		<th>_</th>
-		<th>	#Sk	<br /></th>
-		<th>	!<br />L<br />o	<br /></th>
-		<th>	!<br />H<br />i	<br /></th>
-		<th>	Sk<br />Lv<br />Max	<br /></th>
-		<th>	Skill Name<br />(x=only in GameData,<br />skill in brackets=set bonus skill)	<br /></th>
-		<th>_</th>
-		<th>	#It<br />Box	<br /></th>
-		<th>	#Set<br />Deco	<br /></th>
-		<th>	#Mel<br />der	<br /></th>
-		<th>	Rar<br />Deco	<br /></th>
-		<th>	Deco Name<br />(add ".. Jewel"<br />and LvDeco)	<br /></th>
-		<th>	Lv <br />Deco	<br /></th>
-		<th>_</th>
-		<th>	#<br />Ch<br />Cr	<br /></th>
-		<th>	Ch<br />Rar<br />I	<br /></th>
-		<th>	Charm Name<br />(add ".. Charm" and<br />I/II/III from MaxChLv)	<br /></th>
-		<th>	Max<br />Ch<br />Lv	<br /></th>
-		<th>	Sk<br />Max<br />ed?	<br /></th>
-		<th>	Ch<br />2nd<br />Sk?	<br /></th>
-		<th>	Charm<br />2nd Skill:<br />(o=one skill only)	<br /></th>
+		<th class="cols colspacer">_</th>
+		<th class="cols colos">	#Sk	<br /></th>
+		<th class="cols colfl">	!<br />L<br />o	<br /></th>
+		<th class="cols colfh">	!<br />H<br />i	<br /></th>
+		<th class="cols colls">	Sk<br />Lv<br />Max	<br /></th>
+		<th class="cols colns nwrp">	Skill Name<br />(x=only in GameData,<br />skill in brackets=set bonus skill)	<br /></th>
+		<th class="cold col">_</th>
+		<th class="cold coloi">	#It<br />Box	<br /></th>
+		<th class="cold colod">	#Set<br />Deco	<br /></th>
+		<th class="cold colom">	#Mel<br />der	<br /></th>
+		<th class="cold colrd">	Rar<br />Deco	<br /></th>
+		<th class="cold colnd">	Deco Name<br />(add ".. Jewel"<br />and LvDeco)	<br /></th>
+		<th class="cold colld">	Lv <br />Deco	<br /></th>
+		<th class="colc col">_</th>
+		<th class="colc coloc">	#<br />Ch<br />Cr	<br /></th>
+		<th class="colc colar">	ChI<br />Cr<br />Rar	<br /></th>
+		<th class="colc colnc">	Charm Name<br />(add ".. Charm" <br />and I / II / III)	<br /></th>
+		<th class="colc colcm">	Max<br />Ch<br />Lv	<br /></th>
+		<th class="colc colsm">	Sk<br />Max<br />ed?	<br /></th>
+		<th class="colc cols2">	Ch<br />2nd<br />Sk?	<br /></th>
+		<th class="colc colss">	Charm<br />2nd Skill:<br />(o=one skill only)	<br /></th>
 
 <!--></!-->
-		<th class="colcu">_</th>
-		<th class="colcu">
+		<th class="colcut">_</th>
+		<th class="colcut">
 		<table><tr>
 
 		<td><table>
@@ -167,49 +196,68 @@ Click on column header to sort table.
 <!--></!-->
 
 
-<!-->
-		<th>_</th>
-		<th>	CI.R	<br /></th>
-		<th>	CI.z	<br /></th>
-		<th>	CI.x1	<br /></th>
-		<th>	CI.Mat1	<br /></th>
-		<th>	CI.x2	<br /></th>
-		<th>	CI.Mat2	<br /></th>
-		<th>	CI.x3	<br /></th>
-		<th>	CI.Mat3	<br /></th>
-		<th>	CI.x4	<br /></th>
-		<th>	CI.Mat4	<br /></th>
-		<th>	CII.R	<br /></th>
-		<th>	CII.z	<br /></th>
-		<th>	CII.x1	<br /></th>
-		<th>	CII.Mat1	<br /></th>
-		<th>	CII.x2	<br /></th>
-		<th>	CII.Mat2	<br /></th>
-		<th>	CII.x3	<br /></th>
-		<th>	CII.Mat3	<br /></th>
-		<th>	CII.x4	<br /></th>
-		<th>	CII.Mat4	<br /></th>
-		<th>	CIII.R	<br /></th>
-		<th>	CIII.z	<br /></th>
-		<th>	CIII.x1	<br /></th>
-		<th>	CIII.Mat1	<br /></th>
-		<th>	CIII.x2	<br /></th>
-		<th>	CIII.Mat2	<br /></th>
-		<th>	CIII.x3	<br /></th>
-		<th>	CIII.Mat3	<br /></th>
-		<th>	CIII.x4	<br /></th>
-		<th>	CIII.Mat4	<br /></th>
-</!-->
+<!--></!-->
+		<th class="colcu">_</th>
+		<th class="colcu">	CI.R	<br /></th>
+		<th class="colcu">	CI.z	<br /></th>
+		<th class="colcu">	CI.x1	<br /></th>
+		<th class="colcu">	CI.Mat1	<br /></th>
+		<th class="colcu">	CI.x2	<br /></th>
+		<th class="colcu">	CI.Mat2	<br /></th>
+		<th class="colcu">	CI.x3	<br /></th>
+		<th class="colcu">	CI.Mat3	<br /></th>
+		<th class="colcu">	CI.x4	<br /></th>
+		<th class="colcu">	CI.Mat4	<br /></th>
+		<th class="colcu">_</th>
+		<th class="colcu">	CII.R	<br /></th>
+		<th class="colcu">	CII.z	<br /></th>
+		<th class="colcu">	CII.x1	<br /></th>
+		<th class="colcu">	CII.Mat1	<br /></th>
+		<th class="colcu">	CII.x2	<br /></th>
+		<th class="colcu">	CII.Mat2	<br /></th>
+		<th class="colcu">	CII.x3	<br /></th>
+		<th class="colcu">	CII.Mat3	<br /></th>
+		<th class="colcu">	CII.x4	<br /></th>
+		<th class="colcu">	CII.Mat4	<br /></th>
+		<th class="colcu">_</th>
+		<th class="colcu">	CIII.R	<br /></th>
+		<th class="colcu">	CIII.z	<br /></th>
+		<th class="colcu">	CIII.x1	<br /></th>
+		<th class="colcu">	CIII.Mat1	<br /></th>
+		<th class="colcu">	CIII.x2	<br /></th>
+		<th class="colcu">	CIII.Mat2	<br /></th>
+		<th class="colcu">	CIII.x3	<br /></th>
+		<th class="colcu">	CIII.Mat3	<br /></th>
+		<th class="colcu">	CIII.x4	<br /></th>
+		<th class="colcu">	CIII.Mat4	<br /></th>
+<!--></!-->
 
 
 <!--></!-->
+		<th class="colsd2">_</th>
+		<th class="colsd2">	<div class="nwrp">Skill Description (Ingame MHWv2.01)</div>	</th>
+<!--></!-->
+
+<!--></!-->
 		<th class="colsd">_</th>
-		<th class="colsd">	<p class="nwrp">Skill Description (Ingame MHWv2.01)</p>	<br /></th>
+		<th class="colsd">	Skill Description (Ingame MHWv2.01)	<br /></th>
 <!--></!-->
 
 
 <!--></!-->
 		<th class="colslx">	Skill Level Explanations	<br /></th>
+<!--></!-->
+
+
+<!--></!-->
+		<th class="colsx">-<br /></th>
+		<th class="colsx">	Skill Lv.1 Explanation	<br /></th>
+		<th class="colsx">	Skill Lv.2 Explanation	<br /></th>
+		<th class="colsx">	Skill Lv.3 Explanation	<br /></th>
+		<th class="colsx">	Skill Lv.4 Explanation	<br /></th>
+		<th class="colsx">	Skill Lv.5 Explanation	<br /></th>
+		<th class="colsx">	Skill Lv.6 Explanation	<br /></th>
+		<th class="colsx">	Skill Lv.7 Explanation	<br /></th>
 <!--></!-->
 
 
@@ -223,32 +271,32 @@ Click on column header to sort table.
 	<tbody>
 	<xsl:for-each select="file/xml/it">
 	<tr>
-		<td bgcolor="gray"></td>
-		<td><xsl:value-of select="os"/></td>
-		<td><xsl:value-of select="fl"/></td>
-		<td><xsl:value-of select="fh"/></td>
-		<td><xsl:value-of select="ls"/></td>
-		<td><xsl:value-of select="ns"/></td>
-		<td bgcolor="gray"></td>
-		<td><xsl:value-of select="oi"/></td>
-		<td><xsl:value-of select="od"/></td>
-		<td><xsl:value-of select="om"/></td>
-		<td>d<xsl:value-of select="rd"/></td>
-		<td><xsl:value-of select="nd"/></td>
-		<td><xsl:value-of select="ld"/></td>
-		<td bgcolor="gray"></td>
-		<td><xsl:value-of select="oc"/></td>
-		<td>c<xsl:value-of select="cu/a/ar"/></td>
-		<td><xsl:value-of select="nc"/></td>
-		<td><xsl:value-of select="cm"/></td>
-		<td><xsl:value-of select="sm"/></td>
-		<td><xsl:value-of select="s2"/></td>
-		<td><xsl:value-of select="ss"/></td>
+		<td class="cols colspacer" bgcolor="gray"></td>
+		<td class="cols colos"><xsl:value-of select="os"/></td>
+		<td class="cols colfl"><xsl:value-of select="fl"/></td>
+		<td class="cols colfh"><xsl:value-of select="fh"/></td>
+		<td class="cols colls"><xsl:value-of select="ls"/></td>
+		<td class="cols colns nwrp"><xsl:value-of select="ns"/><br /><xsl:value-of select="ms"/></td>
+		<td class="cold col" bgcolor="gray"></td>
+		<td class="cold coloi"><xsl:value-of select="oi"/></td>
+		<td class="cold colod"><xsl:value-of select="od"/></td>
+		<td class="cold colom"><xsl:value-of select="om"/></td>
+		<td class="cold colrd">d<xsl:value-of select="rd"/></td>
+		<td class="cold colnd"><xsl:value-of select="nd"/></td>
+		<td class="cold colld"><xsl:value-of select="ld"/></td>
+		<td class="colc col" bgcolor="gray"></td>
+		<td class="colc coloc"><xsl:value-of select="oc"/></td>
+		<td class="colc colar">c<xsl:value-of select="cu/a/ar"/></td>
+		<td class="colc colnc"><xsl:value-of select="nc"/></td>
+		<td class="colc colcm"><xsl:value-of select="cm"/></td>
+		<td class="colc colsm"><xsl:value-of select="sm"/></td>
+		<td class="colc cols2"><xsl:value-of select="s2"/></td>
+		<td class="colc colss"><xsl:value-of select="ss"/></td>
 
 
-<!-->	cu1-charm upgrades: nested tables:	</!-->
-		<td class="colcu" bgcolor="gray"></td>
-		<td class="colcu">
+<!-->	cu2-charm upgrades: nested tables:	</!-->
+		<td class="colcut" bgcolor="gray"></td>
+		<td class="colcut">
 		<table><tr>
 		
 		<td><table>
@@ -281,49 +329,54 @@ Click on column header to sort table.
 		
 		</tr></table>
 		</td>
-<!-->	//cu1	</!-->
-
-<!-->	cu2-charm upgrades: simple columns:	</!-->
-<!-->
-		<td><xsl:value-of select="cu/a/ar"/></td>
-		<td><xsl:value-of select="cu/a/az"/>z</td>
-		<td><xsl:value-of select="cu/a/a1"/></td>
-		<td><xsl:value-of select="cu/a/a2"/></td>
-		<td><xsl:value-of select="cu/a/a3"/></td>
-		<td><xsl:value-of select="cu/a/a4"/></td>
-		<td><xsl:value-of select="cu/a/a5"/></td>
-		<td><xsl:value-of select="cu/a/a6"/></td>
-		<td><xsl:value-of select="cu/a/a7"/></td>
-		<td><xsl:value-of select="cu/a/a8"/></td>
-		<td><xsl:value-of select="cu/b/br"/></td>
-		<td><xsl:value-of select="cu/b/bz"/>z</td>
-		<td><xsl:value-of select="cu/b/b1"/></td>
-		<td><xsl:value-of select="cu/b/b2"/></td>
-		<td><xsl:value-of select="cu/b/b3"/></td>
-		<td><xsl:value-of select="cu/b/b4"/></td>
-		<td><xsl:value-of select="cu/b/b5"/></td>
-		<td><xsl:value-of select="cu/b/b6"/></td>
-		<td><xsl:value-of select="cu/b/b7"/></td>
-		<td><xsl:value-of select="cu/b/b8"/></td>
-		<td><xsl:value-of select="cu/c/cr"/></td>
-		<td><xsl:value-of select="cu/c/cz"/>z</td>
-		<td><xsl:value-of select="cu/c/c1"/></td>
-		<td><xsl:value-of select="cu/c/c2"/></td>
-		<td><xsl:value-of select="cu/c/c3"/></td>
-		<td><xsl:value-of select="cu/c/c4"/></td>
-		<td><xsl:value-of select="cu/c/c5"/></td>
-		<td><xsl:value-of select="cu/c/c6"/></td>
-		<td><xsl:value-of select="cu/c/c7"/></td>
-		<td><xsl:value-of select="cu/c/c8"/></td>
-</!-->
 <!-->	//cu2	</!-->
+
+<!-->	cu-charm upgrades: simple columns:	</!-->
+		<td class="colcu" bgcolor="gray"></td>
+		<td class="colcu"><xsl:value-of select="cu/a/ar"/></td>
+		<td class="colcu"><xsl:value-of select="cu/a/az"/>z</td>
+		<td class="colcu"><xsl:value-of select="cu/a/a1"/></td>
+		<td class="colcu"><xsl:value-of select="cu/a/a2"/></td>
+		<td class="colcu"><xsl:value-of select="cu/a/a3"/></td>
+		<td class="colcu"><xsl:value-of select="cu/a/a4"/></td>
+		<td class="colcu"><xsl:value-of select="cu/a/a5"/></td>
+		<td class="colcu"><xsl:value-of select="cu/a/a6"/></td>
+		<td class="colcu"><xsl:value-of select="cu/a/a7"/></td>
+		<td class="colcu"><xsl:value-of select="cu/a/a8"/></td>
+		<td class="colcu" bgcolor="gray"></td>
+		<td class="colcu"><xsl:value-of select="cu/b/br"/></td>
+		<td class="colcu"><xsl:value-of select="cu/b/bz"/>z</td>
+		<td class="colcu"><xsl:value-of select="cu/b/b1"/></td>
+		<td class="colcu"><xsl:value-of select="cu/b/b2"/></td>
+		<td class="colcu"><xsl:value-of select="cu/b/b3"/></td>
+		<td class="colcu"><xsl:value-of select="cu/b/b4"/></td>
+		<td class="colcu"><xsl:value-of select="cu/b/b5"/></td>
+		<td class="colcu"><xsl:value-of select="cu/b/b6"/></td>
+		<td class="colcu"><xsl:value-of select="cu/b/b7"/></td>
+		<td class="colcu"><xsl:value-of select="cu/b/b8"/></td>
+		<td class="colcu" bgcolor="gray"></td>
+		<td class="colcu"><xsl:value-of select="cu/c/cr"/></td>
+		<td class="colcu"><xsl:value-of select="cu/c/cz"/>z</td>
+		<td class="colcu"><xsl:value-of select="cu/c/c1"/></td>
+		<td class="colcu"><xsl:value-of select="cu/c/c2"/></td>
+		<td class="colcu"><xsl:value-of select="cu/c/c3"/></td>
+		<td class="colcu"><xsl:value-of select="cu/c/c4"/></td>
+		<td class="colcu"><xsl:value-of select="cu/c/c5"/></td>
+		<td class="colcu"><xsl:value-of select="cu/c/c6"/></td>
+		<td class="colcu"><xsl:value-of select="cu/c/c7"/></td>
+		<td class="colcu"><xsl:value-of select="cu/c/c8"/></td>
+<!-->	//cu	</!-->
+
+
+		<td class="colsd2" bgcolor="gray"></td>
+		<td class="colsd2"><xsl:value-of select="s/sd"/></td>
 
 
 		<td class="colsd" bgcolor="gray"></td>
-		<td class="colsd"><xsl:value-of select="s/sd"/></td>
+		<td class="colsd nwrp"><xsl:value-of select="s/sd"/></td>
 
 
-<!-->	sd1-skill level explanations: nested tables:	</!-->
+<!-->	sd2-skill level explanations: nested tables:	</!-->
 		<td class="colslx">
 		<table>
 		<!-->
@@ -338,7 +391,18 @@ Click on column header to sort table.
 		<tr><td></td><td><xsl:value-of select="s/s7"/></td></tr>
 		</table>
 		</td>
-<!-->	//sd1	</!-->
+<!-->	//sd2	</!-->
+
+<!-->	sd-skill level explanations: simple columns:	</!-->
+		<td class="colsx" bgcolor="gray"></td>
+		<td class="colsx">Lv1: <xsl:value-of select="s/s1"/></td>
+		<td class="colsx">Lv2: <xsl:value-of select="s/s2"/></td>
+		<td class="colsx">Lv3: <xsl:value-of select="s/s3"/></td>
+		<td class="colsx">Lv4: <xsl:value-of select="s/s4"/></td>
+		<td class="colsx">Lv5: <xsl:value-of select="s/s5"/></td>
+		<td class="colsx">Lv6: <xsl:value-of select="s/s6"/></td>
+		<td class="colsx">Lv7: <xsl:value-of select="s/s7"/></td>
+<!-->	//sd	</!-->
 
 
 		<td bgcolor="gray"></td>
@@ -353,13 +417,140 @@ Click on column header to sort table.
 	
 	
 	<!-->copy paste the thead contents here</!-->
-	
+		<tr>
+		<th class="cols colspacer">_</th>
+		<th class="cols colos">	#Sk	<br /></th>
+		<th class="cols colfl">	!<br />L<br />o	<br /></th>
+		<th class="cols colfh">	!<br />H<br />i	<br /></th>
+		<th class="cols colls">	Sk<br />Lv<br />Max	<br /></th>
+		<th class="cols colns nwrp">	Skill Name<br />(x=only in GameData,<br />skill in brackets=set bonus skill)	<br /></th>
+		<th class="cold col">_</th>
+		<th class="cold coloi">	#It<br />Box	<br /></th>
+		<th class="cold colod">	#Set<br />Deco	<br /></th>
+		<th class="cold colom">	#Mel<br />der	<br /></th>
+		<th class="cold colrd">	Rar<br />Deco	<br /></th>
+		<th class="cold colnd">	Deco Name<br />(add ".. Jewel"<br />and LvDeco)	<br /></th>
+		<th class="cold colld">	Lv <br />Deco	<br /></th>
+		<th class="colc col">_</th>
+		<th class="colc coloc">	#<br />Ch<br />Cr	<br /></th>
+		<th class="colc colar">	ChI<br />Cr<br />Rar	<br /></th>
+		<th class="colc colnc">	Charm Name<br />(add ".. Charm" <br />and I / II / III)	<br /></th>
+		<th class="colc colcm">	Max<br />Ch<br />Lv	<br /></th>
+		<th class="colc colsm">	Sk<br />Max<br />ed?	<br /></th>
+		<th class="colc cols2">	Ch<br />2nd<br />Sk?	<br /></th>
+		<th class="colc colss">	Charm<br />2nd Skill:<br />(o=one skill only)	<br /></th>
+
+<!--></!-->
+		<th class="colcut">_</th>
+		<th class="colcut">
+		<table><tr>
+
+		<td><table>
+		<tr><td colspan="2">Charm Materials</td></tr>
+		<tr><td>Rare Craft I</td><td>Price I</td></tr>
+		<tr><td>Rare Upgrade II</td><td>Price II</td></tr>
+		<tr><td>Rare Upgrade III</td><td>Price III</td></tr>
+		</table></td>
+		
+		<td><table>
+		<tr><td>CI.x1</td><td>CI.Mat1</td></tr>
+		<tr><td>CI.x2</td><td>CI.Mat2</td></tr>
+		<tr><td>CI.x3</td><td>CI.Mat3</td></tr>
+		<tr><td>CI.x4</td><td>CI.Mat4</td></tr>
+		</table></td>
+		
+		<td><table>
+		<tr><td>CII.x1</td><td>CII.Mat1</td></tr>
+		<tr><td>CII.x2</td><td>CII.Mat2</td></tr>
+		<tr><td>CII.x3</td><td>CII.Mat3</td></tr>
+		<tr><td>CII.x4</td><td>CII.Mat4</td></tr>
+		</table></td>
+		
+		<td><table>
+		<tr><td>CIII.x1</td><td>CIII.Mat1</td></tr>
+		<tr><td>CIII.x2</td><td>CIII.Mat2</td></tr>
+		<tr><td>CIII.x3</td><td>CIII.Mat3</td></tr>
+		<tr><td>CIII.x4</td><td>CIII.Mat4</td></tr>
+		</table></td>
+
+		</tr></table>
+		</th>
+<!--></!-->
+
+
+<!--></!-->
+		<th class="colcu">_</th>
+		<th class="colcu">	CI.R	<br /></th>
+		<th class="colcu">	CI.z	<br /></th>
+		<th class="colcu">	CI.x1	<br /></th>
+		<th class="colcu">	CI.Mat1	<br /></th>
+		<th class="colcu">	CI.x2	<br /></th>
+		<th class="colcu">	CI.Mat2	<br /></th>
+		<th class="colcu">	CI.x3	<br /></th>
+		<th class="colcu">	CI.Mat3	<br /></th>
+		<th class="colcu">	CI.x4	<br /></th>
+		<th class="colcu">	CI.Mat4	<br /></th>
+		<th class="colcu">_</th>
+		<th class="colcu">	CII.R	<br /></th>
+		<th class="colcu">	CII.z	<br /></th>
+		<th class="colcu">	CII.x1	<br /></th>
+		<th class="colcu">	CII.Mat1	<br /></th>
+		<th class="colcu">	CII.x2	<br /></th>
+		<th class="colcu">	CII.Mat2	<br /></th>
+		<th class="colcu">	CII.x3	<br /></th>
+		<th class="colcu">	CII.Mat3	<br /></th>
+		<th class="colcu">	CII.x4	<br /></th>
+		<th class="colcu">	CII.Mat4	<br /></th>
+		<th class="colcu">_</th>
+		<th class="colcu">	CIII.R	<br /></th>
+		<th class="colcu">	CIII.z	<br /></th>
+		<th class="colcu">	CIII.x1	<br /></th>
+		<th class="colcu">	CIII.Mat1	<br /></th>
+		<th class="colcu">	CIII.x2	<br /></th>
+		<th class="colcu">	CIII.Mat2	<br /></th>
+		<th class="colcu">	CIII.x3	<br /></th>
+		<th class="colcu">	CIII.Mat3	<br /></th>
+		<th class="colcu">	CIII.x4	<br /></th>
+		<th class="colcu">	CIII.Mat4	<br /></th>
+<!--></!-->
+
+
+<!--></!-->
+		<th class="colsd2">_</th>
+		<th class="colsd2">	<div class="nwrp">Skill Description (Ingame MHWv2.01)</div>	</th>
+<!--></!-->
+
+<!--></!-->
+		<th class="colsd">_</th>
+		<th class="colsd">	Skill Description (Ingame MHWv2.01)	<br /></th>
+<!--></!-->
+
+
+<!--></!-->
+		<th class="colslx">	Skill Level Explanations	<br /></th>
+<!--></!-->
+
+
+<!--></!-->
+		<th class="colsx">-<br /></th>
+		<th class="colsx">	Skill Lv.1 Explanation	<br /></th>
+		<th class="colsx">	Skill Lv.2 Explanation	<br /></th>
+		<th class="colsx">	Skill Lv.3 Explanation	<br /></th>
+		<th class="colsx">	Skill Lv.4 Explanation	<br /></th>
+		<th class="colsx">	Skill Lv.5 Explanation	<br /></th>
+		<th class="colsx">	Skill Lv.6 Explanation	<br /></th>
+		<th class="colsx">	Skill Lv.7 Explanation	<br /></th>
+<!--></!-->
+
+
+		<th>_</th>
+	</tr>
 	
 	</tfoot>
 </table>
 
 <!--></!-->
-<hr><div id="bottomruler"></div></hr>
+<hr /><div id="bottomruler"></div>
 <a href="#topruler">[Top]</a><br />
 
 <br />

@@ -120,7 +120,7 @@ Click on column header to sort table.
  [<a id="swslx" onclick="textswitcher('swslx','Click to +-Toggle-+ Skill Level Descriptions Column','Click to -+Toggle+- Skill Level Descriptions Column');csssw('.colslx','display','none','table-cell');">Click to +View+ Skill Level Descriptions</a>]
 <br />
 Too much information? View only:
-  [<u><a id="reloader" href="default.htm">Default Sk/D/Ch</a>]</u>
+  [<u><a id="reloader" href="index.htm">Default Sk/D/Ch</a>]</u>
   [<u><a id="swall" onclick="csssw('.colcu','display','none','table-cell');csssw('.colsd','display','table-cell','none');csssw('.colsx','display','table-cell','none');">*Full*</a></u>]
 , [<u><a id="sws2"   onclick="csssw('.cold','display','none','table-cell');csssw('.colc','display','none','table-cell');csssw('.colsd2','display','none','table-cell');csssw('.colslx','display','none','table-cell');   csssw('.colfl','display','none','table-cell');csssw('.colfh','display','none','table-cell');">Skills</a></u>]
   [<u><a id="sws"    onclick="csssw('.cold','display','none','table-cell');csssw('.colc','display','none','table-cell'); csssw('.colsd','display','none','table-cell');csssw('.colsx','display','none','table-cell');">Full</a></u>]
